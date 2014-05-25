@@ -19,13 +19,14 @@ makeVector <- function(x) {
             getmean = getmean)
 }
 
+## An Object That Remembers its Mean
 setMethod("show", "cachemean",
           function(object) {
                   x <- object$get()
                   show(x)
                   invisible(x)
           })
-
+## An Object That set its Mean
 setMethod("mean", "cachemean",
           function(x, ...) {
                   m <- x$getmean()
